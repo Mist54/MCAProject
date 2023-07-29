@@ -2,7 +2,7 @@ import hashlib
 import sys
 from PySide6.QtWidgets import QApplication, QWidget, QMessageBox
 from PySide6.QtUiTools import QUiLoader
-from PySide6.QtCore import QFile
+from PySide6.QtCore import QFile, Qt
 
 
 class HashForm(QWidget):
@@ -27,6 +27,13 @@ class HashForm(QWidget):
         self.ui.Blake_2.clicked.connect(self.blake2_encrypt)
         self.ui.SHA_256.clicked.connect(self.sha256_encrypt)
         self.ui.Btn_Clear.clicked.connect(self.clear_text)
+
+        # Set the window properties
+        self.setWindowTitle("Hash Form")
+        self.setMinimumSize(800, 600)
+
+        # Apply custom styles
+        self.apply_styles()
 
         # Show the widget
         self.ui.show()
@@ -76,6 +83,34 @@ class HashForm(QWidget):
         error_dialog.setText(message)
         error_dialog.setStandardButtons(QMessageBox.Ok)
         error_dialog.exec()
+
+    def apply_styles(self):
+        # Set background color of the main widget
+        self.ui.setStyleSheet(
+            "QWidget { background-color: #f5f5f5; }"
+        )
+
+        # Set stylesheet for buttons
+        button_style = (
+            "QPushButton { background-color: #007BFF; color: white;"
+            " border: none; border-radius: 15px; padding: 10px 20px; font-size: 14px; }"
+            "QPushButton:hover { background-color: #0056b3; }"
+            "QPushButton:pressed { background-color: #003d80; }"
+        )
+        self.ui.MD5_Encrypt.setStyleSheet(button_style)
+        self.ui.SHA_3.setStyleSheet(button_style)
+        self.ui.Blake_2.setStyleSheet(button_style)
+        self.ui.SHA_256.setStyleSheet(button_style)
+        self.ui.Btn_Clear.setStyleSheet(button_style)
+        self.ui.Btn_MainMenu.setStyleSheet(button_style)
+
+        # Set stylesheet for text areas
+        text_area_style = (
+            "QPlainTextEdit { background-color: #f0f0f0; color: #333; border: 1px solid #ccc;"
+            " border-radius: 10px; padding: 10px; font-size: 16px; }"
+        )
+        self.ui.Encrypt_Text.setStyleSheet(text_area_style)
+        self.ui.Hash_Text.setStyleSheet(text_area_style)
 
 
 if __name__ == "__main__":

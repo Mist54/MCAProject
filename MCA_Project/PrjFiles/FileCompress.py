@@ -5,9 +5,19 @@ import py7zr
 import tarfile
 import bz2
 import sys
-from PySide6.QtWidgets import QApplication, QWidget, QMessageBox, QFileDialog
+from PySide6.QtWidgets import (
+    QApplication,
+    QWidget,
+    QMessageBox,
+    QFileDialog,
+    QVBoxLayout,
+    QPushButton,
+    QLabel,
+    QRadioButton,
+    QLineEdit,
+)
 from PySide6.QtUiTools import QUiLoader
-from PySide6.QtCore import QFile
+from PySide6.QtCore import QFile, Qt
 
 
 class FileCompress(QWidget):
@@ -31,15 +41,23 @@ class FileCompress(QWidget):
         self.ui.BtnCompress.clicked.connect(self.compress_folder)
         self.ui.BtnDecompress.clicked.connect(self.decompress_folder)
 
+        # Set the window properties
+        self.setWindowTitle("File Compressor")
+        self.setMinimumSize(800, 600)
+        self.setMaximumSize(800, 800)
+
+        # Apply custom styles
+        self.apply_styles()
+
         # Show the widget
         self.ui.show()
 
-    # Rest of the code...
     def choose_file(self):
         file_dialog = QFileDialog()
         file_path, _ = file_dialog.getOpenFileName(self, "Choose File")
         self.ui.ChooseFile.setText(file_path)
 
+    # Rest of the code...
     def compress_folder(self):
         folder_path = self.ui.ChooseFile.text()
         if not folder_path:
@@ -172,6 +190,41 @@ class FileCompress(QWidget):
         info_dialog.setText(message)
         info_dialog.setStandardButtons(QMessageBox.Ok)
         info_dialog.exec()
+
+    def apply_styles(self):
+        # Set background color of the main widget
+        self.ui.setStyleSheet(
+            "QWidget { background-color: #f5f5f5; }"
+        )
+
+        # Set stylesheet for buttons
+        buttons = [self.ui.BtnFileChoose, self.ui.BtnCompress, self.ui.BtnDecompress, self.ui.BtnMainMenu]
+        for button in buttons:
+            button.setStyleSheet(
+                "QPushButton { background-color: #61afef; color: white; border: 1px solid #61afef; border-radius: 5px; padding: 10px; }"
+                "QPushButton:hover { background-color: #4e93bf; }"
+            )
+
+        # Set stylesheet for radio buttons
+        radio_buttons = [self.ui.RdZip, self.ui.RdRAR, self.ui.Rd7z, self.ui.RdBzip]
+        for radio_button in radio_buttons:
+            radio_button.setStyleSheet(
+                "QRadioButton { color: #61afef; font-size: 16px; }"
+                "QRadioButton::indicator { width: 16px; height: 16px; }"
+                "QRadioButton::indicator:checked { border: 2px solid #61afef; background-color: #61afef; }"
+                "QRadioButton::indicator:unchecked { border: 2px solid #61afef; background-color: white; }"
+            )
+
+        # Set stylesheet for line edit
+        self.ui.ChooseFile.setStyleSheet(
+            "QLineEdit { background-color: #f0f0f0; color: #333; border: 1px solid #ccc; padding: 10px; }"
+        )
+
+        # Set stylesheet for information and warning dialogs
+        self.setStyleSheet(
+            "QMessageBox { background-color: #f5f5f5; color: #333; }"
+            "QMessageBox QPushButton { background-color: #61afef; color: white; }"
+        )
 
 
 if __name__ == "__main__":

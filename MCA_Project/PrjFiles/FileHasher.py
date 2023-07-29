@@ -33,7 +33,38 @@ class FileHasher(QWidget):
 
         # Rest of code
 
-        # choosing file from GUI
+        # Add style sheet to the widget
+        style_sheet = """
+            /* Add your custom styles here */
+            QWidget {
+                background-color: #f0f0f0;
+                font-family: Arial, sans-serif;
+            }
+            QPushButton {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 8px 16px;
+                border-radius: 4px;
+            }
+            QPushButton:hover {
+                background-color: #45a049;
+            }
+            QPushButton:pressed {
+                background-color: #357934;
+            }
+            QLineEdit {
+                padding: 6px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+        """
+        self.ui.setStyleSheet(style_sheet)
+
+        # Set window title
+        self.setWindowTitle("File Hasher")
+
+        # choosing file 1from GUI
 
     def choose_file(self):
         file_dialog = QFileDialog()

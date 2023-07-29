@@ -1,8 +1,8 @@
 import os
 import sys
-from PySide6.QtWidgets import QApplication, QWidget, QMessageBox, QFileDialog, QDialog
+from PySide6.QtWidgets import QApplication, QWidget, QMessageBox, QFileDialog, QDialog, QPushButton, QTextEdit
 from PySide6.QtUiTools import QUiLoader
-from PySide6.QtCore import QFile
+from PySide6.QtCore import QFile, Qt
 from cryptography.fernet import Fernet
 
 
@@ -37,8 +37,17 @@ class FileEncrypt(QWidget):
         self.ui.BtnDecrypt.clicked.connect(self.decrypt_file)
         self.ui.BtnClear.clicked.connect(self.clear_fields)
 
+        # Set the window properties
+        self.setWindowTitle("File Encryptor")
+        self.setFixedSize(800, 600)
+
+        # Apply custom styles
+        self.apply_styles()
+
         # Show the widget
         self.ui.show()
+
+        self.setWindowTitle("File Encryptor")
 
     # Rest of the code...
     def choose_file(self):
@@ -136,6 +145,46 @@ class FileEncrypt(QWidget):
         self.ui.FileSelect.clear()
         self.ui.FileSave.clear()
         self.ui.HashKey.clear()
+
+    def apply_styles(self):
+        # Set background color of the main widget
+        self.ui.setStyleSheet(
+            "QWidget { background-color: #f5f5f5; }"
+        )
+
+        # Set stylesheet for buttons
+        button_style = (
+            "QPushButton { background-color: #007BFF; color: white;"
+            " border: none; border-radius: 8px; padding: 10px 20px; font-size: 16px; }"
+            "QPushButton:hover { background-color: #0056b3; }"
+            "QPushButton:pressed { background-color: #003d80; }"
+        )
+        self.ui.BtnChooseFile.setStyleSheet(button_style)
+        self.ui.BtnSaveFile.setStyleSheet(button_style)
+        self.ui.BtnEncrypt.setStyleSheet(button_style)
+        self.ui.BtnDecrypt.setStyleSheet(button_style)
+        self.ui.BtnClear.setStyleSheet(button_style)
+        self.ui.BtnMainMenu.setStyleSheet(button_style)
+
+        # Set stylesheet for text areas
+        text_area_style = (
+            "QPlainTextEdit { background-color: #f0f0f0; color: #333; border: 4px solid #ccc;"
+            " border-radius: 15px; padding: 10px; font-size: 28px; }"
+        )
+        self.ui.FileSelect.setStyleSheet(text_area_style)
+        self.ui.FileSave.setStyleSheet(text_area_style)
+        self.ui.HashKey.setStyleSheet(text_area_style)
+
+        # Set stylesheet for message boxes
+        message_box_style = (
+            "QMessageBox { background-color: #f5f5f5; color: #333; border: 1px solid #ccc; }"
+            "QMessageBox QLabel { font-size: 18px; }"
+            "QMessageBox QPushButton { background-color: #007BFF; color: white;"
+            " border: none; border-radius: 8px; padding: 10px 20px; font-size: 16px; }"
+            "QMessageBox QPushButton:hover { background-color: #0056b3; }"
+            "QMessageBox QPushButton:pressed { background-color: #003d80; }"
+        )
+        self.ui.setStyleSheet(self.ui.styleSheet() + message_box_style)
 
 
 if __name__ == "__main__":
