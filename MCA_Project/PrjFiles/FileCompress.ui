@@ -165,7 +165,7 @@
         <item>
          <widget class="QPushButton" name="BtnMainMenu">
           <property name="text">
-           <string>MainMenu</string>
+           <string>Close</string>
           </property>
          </widget>
         </item>

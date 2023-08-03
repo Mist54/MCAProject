@@ -154,10 +154,10 @@ class FileEncrypt(QWidget):
 
         # Set stylesheet for buttons
         button_style = (
-            "QPushButton { background-color: #007BFF; color: white;"
+            "QPushButton { background-color: #4CAF50; color: white;"
             " border: none; border-radius: 8px; padding: 10px 20px; font-size: 16px; }"
-            "QPushButton:hover { background-color: #0056b3; }"
-            "QPushButton:pressed { background-color: #003d80; }"
+            "QPushButton:hover { background-color: #43ad13; }"
+            "QPushButton:pressed { background-color: #43ad13; }"
         )
         self.ui.BtnChooseFile.setStyleSheet(button_style)
         self.ui.BtnSaveFile.setStyleSheet(button_style)

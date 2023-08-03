@@ -1,10 +1,12 @@
-import os
-import zipfile
-import shutil
-import py7zr
-import tarfile
 import bz2
+import os
+import shutil
+import tarfile
+import zipfile
+
+import py7zr
 from PySide6.QtWidgets import QApplication, QDialog, QFileDialog, QMessageBox
+
 from Designer.FileCompress import Ui_Form
 
 

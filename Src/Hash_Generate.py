@@ -2,6 +2,7 @@ import hashlib
 import sys
 
 from PySide6.QtWidgets import QApplication, QWidget, QMessageBox
+
 from Designer.HashForm import Ui_Form
 
 

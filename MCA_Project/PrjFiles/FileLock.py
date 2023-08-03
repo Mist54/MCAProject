@@ -38,9 +38,6 @@ class FileLock(QWidget):
                         background-color: #f0f0f0;
                         font-family: Arial, sans-serif;
                     }
-                    QLabel {
-                        font-size: 16px;
-                    }
                     QLineEdit {
                         padding: 6px;
                         border: 1px solid #ccc;

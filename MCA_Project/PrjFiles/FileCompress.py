@@ -41,6 +41,7 @@ class FileCompress(QWidget):
         self.ui.BtnCompress.clicked.connect(self.compress_folder)
         self.ui.BtnDecompress.clicked.connect(self.decompress_folder)
 
+
         # Set the window properties
         self.setWindowTitle("File Compressor")
         self.setMinimumSize(800, 600)
@@ -201,18 +202,18 @@ class FileCompress(QWidget):
         buttons = [self.ui.BtnFileChoose, self.ui.BtnCompress, self.ui.BtnDecompress, self.ui.BtnMainMenu]
         for button in buttons:
             button.setStyleSheet(
-                "QPushButton { background-color: #61afef; color: white; border: 1px solid #61afef; border-radius: 5px; padding: 10px; }"
-                "QPushButton:hover { background-color: #4e93bf; }"
+                "QPushButton { background-color: #4CAF50; color: white; border: 1px solid #61afef; border-radius: 5px; padding: 10px; }"
+                "QPushButton:hover { background-color: #2faf31; }"
             )
 
         # Set stylesheet for radio buttons
         radio_buttons = [self.ui.RdZip, self.ui.RdRAR, self.ui.Rd7z, self.ui.RdBzip]
         for radio_button in radio_buttons:
             radio_button.setStyleSheet(
-                "QRadioButton { color: #61afef; font-size: 16px; }"
+                "QRadioButton { color: black; font-size: 16px; }"
                 "QRadioButton::indicator { width: 16px; height: 16px; }"
-                "QRadioButton::indicator:checked { border: 2px solid #61afef; background-color: #61afef; }"
-                "QRadioButton::indicator:unchecked { border: 2px solid #61afef; background-color: white; }"
+                "QRadioButton::indicator:checked { border: 2px solid #6ee04e; background-color: #6ee04e; }"
+                "QRadioButton::indicator:unchecked { border: 2px solid #6ee04e; background-color: white; }"
             )
 
         # Set stylesheet for line edit

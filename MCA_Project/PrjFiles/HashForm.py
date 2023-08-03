@@ -27,6 +27,7 @@ class HashForm(QWidget):
         self.ui.Blake_2.clicked.connect(self.blake2_encrypt)
         self.ui.SHA_256.clicked.connect(self.sha256_encrypt)
         self.ui.Btn_Clear.clicked.connect(self.clear_text)
+        self.ui.Btn_Close.clicked.connect(self.close)
 
         # Set the window properties
         self.setWindowTitle("Hash Form")
@@ -76,6 +77,9 @@ class HashForm(QWidget):
         self.ui.Encrypt_Text.clear()
         self.ui.Hash_Text.clear()
 
+    def close(self):
+        self.ui.close()
+
     def show_error_dialog(self, message):
         error_dialog = QMessageBox(self)
         error_dialog.setIcon(QMessageBox.Warning)
@@ -92,17 +96,17 @@ class HashForm(QWidget):
 
         # Set stylesheet for buttons
         button_style = (
-            "QPushButton { background-color: #007BFF; color: white;"
+            "QPushButton { background-color: #4CAF50; color: white;"
             " border: none; border-radius: 15px; padding: 10px 20px; font-size: 14px; }"
             "QPushButton:hover { background-color: #0056b3; }"
-            "QPushButton:pressed { background-color: #003d80; }"
+            "QPushButton:pressed { background-color: #43ad13; }"
         )
         self.ui.MD5_Encrypt.setStyleSheet(button_style)
         self.ui.SHA_3.setStyleSheet(button_style)
         self.ui.Blake_2.setStyleSheet(button_style)
         self.ui.SHA_256.setStyleSheet(button_style)
         self.ui.Btn_Clear.setStyleSheet(button_style)
-        self.ui.Btn_MainMenu.setStyleSheet(button_style)
+        self.ui.Btn_Close.setStyleSheet(button_style)
 
         # Set stylesheet for text areas
         text_area_style = (

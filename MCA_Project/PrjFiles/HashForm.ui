@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>955</width>
+    <width>1036</width>
     <height>804</height>
    </rect>
   </property>
@@ -244,7 +244,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="Btn_MainMenu">
+         <widget class="QPushButton" name="Btn_Close">
           <property name="minimumSize">
            <size>
             <width>120</width>
@@ -261,7 +261,7 @@
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="text">
-           <string>Main Menu</string>
+           <string>Close</string>
           </property>
          </widget>
         </item>

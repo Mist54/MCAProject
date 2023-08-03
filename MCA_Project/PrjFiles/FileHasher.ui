@@ -310,6 +310,19 @@
           </property>
          </widget>
         </item>
+        <item row="9" column="0">
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
         <item row="10" column="0">
          <widget class="QLabel" name="label_6">
           <property name="font">
@@ -323,31 +336,15 @@
           </property>
          </widget>
         </item>
-        <item row="12" column="0">
-         <widget class="QLabel" name="label_7">
-          <property name="font">
-           <font>
-            <family>Rockwell</family>
-            <pointsize>14</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>SHA 1 </string>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="0">
-         <spacer name="horizontalSpacer_5">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
+        <item row="10" column="1">
+         <widget class="QLineEdit" name="lineEdit_2">
+          <property name="maximumSize">
            <size>
-            <width>40</width>
-            <height>20</height>
+            <width>700</width>
+            <height>16777215</height>
            </size>
           </property>
-         </spacer>
+         </widget>
         </item>
         <item row="11" column="0">
          <spacer name="horizontalSpacer_6">
@@ -362,26 +359,16 @@
           </property>
          </spacer>
         </item>
-        <item row="13" column="0">
-         <spacer name="horizontalSpacer_7">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
+        <item row="12" column="0">
+         <widget class="QLabel" name="label_7">
+          <property name="font">
+           <font>
+            <family>Rockwell</family>
+            <pointsize>14</pointsize>
+           </font>
           </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="10" column="1">
-         <widget class="QLineEdit" name="lineEdit_2">
-          <property name="maximumSize">
-           <size>
-            <width>700</width>
-            <height>16777215</height>
-           </size>
+          <property name="text">
+           <string>SHA 1 </string>
           </property>
          </widget>
         </item>
@@ -394,6 +381,19 @@
            </size>
           </property>
          </widget>
+        </item>
+        <item row="13" column="0">
+         <spacer name="horizontalSpacer_7">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </item>
@@ -441,25 +441,6 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="BtnMainMenu">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>250</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Main menu</string>
-          </property>
-         </widget>
-        </item>
-        <item>
          <widget class="QPushButton" name="BtnClear">
           <property name="minimumSize">
            <size>
@@ -475,6 +456,19 @@
           </property>
           <property name="text">
            <string>Clear</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Close</string>
           </property>
          </widget>
         </item>
